@@ -66,8 +66,8 @@
 }
 
 #completions > div {
-  max-height: calc(20 * var(--option-height));
-  min-height: calc(10 * var(--option-height));
+  height: calc(5 * var(--option-height)); /* tamaño fijo */
+  overflow-y: auto; /* permite hacer scroll si hay más sugerencias */
 }
 
 /* COMPLETIONS */
@@ -83,12 +83,13 @@
   width: 100%;
   border-top: unset;
   order: 2;
+  height: calc(5 * var(--option-height) + 3em);
 }
 
 /* Olie doesn't know how CSS inheritance works */
 #completions .HistoryCompletionSource {
-  max-height: unset;
-  min-height: unset;
+  height: calc(9 * var(--option-height)); /* tamaño fijo */
+  overflow-y: auto; /* permite hacer scroll si hay más sugerencias */
 }
 
 #completions .HistoryCompletionSource table {
@@ -100,8 +101,9 @@
 
 /* redundancy 2: redundancy 2: more redundancy */
 #completions .BmarkCompletionSource {
-  max-height: unset;
+  max-height: calc(5 * var(--option-height));
   min-height: unset;
+  overflow-y: auto;
 }
 
 #completions table tr td.prefix,
